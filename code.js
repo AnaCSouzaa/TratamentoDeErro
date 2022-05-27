@@ -7,16 +7,17 @@ function clickButton(){
     var fr=new FileReader();
     try{
         fr.readAsText(arquivo.files[0]);
-
-    }
-    catch{
-        alert("Arquivo não encontrado!")
-    }
         fr.onload=function(){
-        var info = fr.result
-        document.getElementById('output').textContent=fr.result;
+            var info = fr.result;
+            document.getElementById('output').textContent=fr.result;
     }
-    console.log(info)
+}
+    catch{
+        document.getElementById('output').textContent="Arquivo não localizado!";
+    }
+    finally{
+        alert("Obrigado pela visita!");
+    }
     
 }
 
