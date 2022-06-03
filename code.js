@@ -1,7 +1,10 @@
-const inputButton = document.getElementById("inputfilebutton");
-inputButton.addEventListener("click", clickButton);
+const inputFileButton = document.getElementById("inputfilebutton");
+inputfilebutton.addEventListener("click", clickFileButton);
 
-function clickButton(){
+const inputNumberButton = document.getElementById("inputfilenumber");
+inputfilenumber.addEventListener("click", clickNumberButton);
+
+function clickFileButton(){
     arquivo = document.getElementById("inputfile");
 
     var fr=new FileReader();
@@ -21,4 +24,24 @@ function clickButton(){
     
 }
 
+function clickNumberButton (){
+
+    number = document.getElementById("inputnumber").value
+
+    try {
+        if (number == '') throw 'informe um valor';
+        else if (number<5 || number>10) throw 'informe um valor maior que 5 e menor que 10' 
+        document.getElementById("outputnumber").innerHTML = '';
+
+    }
+    catch (erro){
+        // alert("Erro: " +erro.message)
+        document.getElementById("outputnumber").innerHTML = erro;
+        // console.log(erro.message)
+    }
+    finally{
+        alert("O número escolhido foi " +number)
+    }
+    console.log(number);
+}
 
