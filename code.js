@@ -35,13 +35,11 @@ function clickNumberButton (){
 
     }
     catch (erro){
-        // alert("Erro: " +erro.message)
-        document.getElementById("outputnumber").innerHTML = erro;
-        // console.log(erro.message)
+        // alert("Erro: " +erro)
+        document.getElementById("outputnumber").innerHTML = "Erro: " +erro;
     }
     finally{
         alert("O número escolhido foi " +number)
     }
-    console.log(number);
 }
 
