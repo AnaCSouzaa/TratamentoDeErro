@@ -27,19 +27,19 @@ function clickFileButton(){
 function clickNumberButton (){
 
     number = document.getElementById("inputnumber").value
+    number = Number(number);
 
     try {
         if (number == '') throw 'informe um valor';
-        else if (number<5 || number>10) throw 'informe um valor maior que 5 e menor que 10' 
+        if (number <= 5 || number >= 10) throw 'informe um valor maior que 5 e menor que 10' 
         document.getElementById("outputnumber").innerHTML = '';
 
     }
     catch (erro){
-        // alert("Erro: " +erro)
-        document.getElementById("outputnumber").innerHTML = "Erro: " +erro;
+        console.log("Erro: " +erro)
+        document.getElementById("outputnumber").innerHTML = erro;
     }
     finally{
         alert("O número escolhido foi " +number)
     }
 }
-
